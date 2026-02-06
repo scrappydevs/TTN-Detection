@@ -80,7 +80,7 @@ class TTNet_Dataset(Dataset):
         target_seg[target_seg < 75] = 0.
         target_seg[target_seg >= 75] = 1.
 
-        return resized_imgs, org_ball_pos_xy.astype(np.int), global_ball_pos_xy.astype(np.int), \
+        return resized_imgs, org_ball_pos_xy.astype(int), global_ball_pos_xy.astype(int), \
                target_events, target_seg
 
 
