@@ -75,7 +75,7 @@ class TTNet_Dataset(Dataset):
 
         # Transpose (H, W, C) to (C, H, W) --> fit input of Pytorch model
         resized_imgs = resized_imgs.transpose(2, 0, 1)
-        target_seg = seg_img.transpose(2, 0, 1).astype(np.float)
+        target_seg = seg_img.transpose(2, 0, 1).astype(float)
         # Segmentation mask should be 0 or 1
         target_seg[target_seg < 75] = 0.
         target_seg[target_seg >= 75] = 1.
